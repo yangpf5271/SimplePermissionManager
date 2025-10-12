@@ -9,13 +9,21 @@ jobs:
       matrix:
         target:
         - "x64-7.0"
+        - "x64-7.2"
         - "aarch64-7.0"
+        - "aarch64-7.2"
         include:
         - target: x64-7.0
           dsm_ver: 7.0
           go_arch: amd64
+        - target: x64-7.2
+          dsm_ver: 7.2
+          go_arch: amd64
         - target: aarch64-7.0
           dsm_ver: 7.0
+          go_arch: arm64
+        - target: aarch64-7.2
+          dsm_ver: 7.2
           go_arch: arm64
     steps:
       - uses: actions/checkout@v4
